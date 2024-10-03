@@ -1,5 +1,5 @@
 import toast, { Toaster } from "react-hot-toast";
-import '../styles/index.css'
+import '../index.css'
 import "../styles/App.css";
 import { TOKEN_ICO_Provider } from "../context"; 
 
