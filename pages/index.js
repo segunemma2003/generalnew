@@ -32,12 +32,12 @@ import {Footer,
   TransferCurrency,
   Donate,
   UpdatePrice,
-  UpdateAddress } from "../Components/index";
+  UpdateAddress } from "../components/index";
 
 import {TOKEN_ICO_Context} from "../context/index";
-import {shortenAddress} from "../Utils/index";
-import { getFirstSetting, getRecentBuys } from '../Utils/api';
-import ReferralPopup from "../Components/ReferralPopup";
+import {shortenAddress} from "../utils/index";
+import { getFirstSetting, getRecentBuys } from '../utils/api';
+import ReferralPopup from "../components/ReferralPopup";
 
 const index = () => {
   const {

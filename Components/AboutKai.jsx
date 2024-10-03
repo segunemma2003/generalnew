@@ -1,6 +1,6 @@
 import React from "react";
 import { kai } from "../data/data";
-import {shortenAddress, timeAgo} from "../Utils/index";
+import {shortenAddress, timeAgo} from "../utils/index";
 
 const AboutKai = ({
   detail,

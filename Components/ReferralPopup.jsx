@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CHECK_WALLET_CONNECTED } from "../context/constants";
-import { getReferralCode } from "../Utils/api";
+import { getReferralCode } from "../utils/api";
 
 const ReferralPopup = ({ setReferralPopup,  setLoader }) => {
     const [isCopied, setIsCopied] = useState(false);

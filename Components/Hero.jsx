@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import toast  from "react-hot-toast";
 import styles from "../styles/Hero.module.css";
-import { detailsImg, logo } from "../assets";
+import { detailsImg, logo } from "../assets/index.js";
 import Button from "./Button.jsx";
 
 
