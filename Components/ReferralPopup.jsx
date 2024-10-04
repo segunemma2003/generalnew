@@ -9,6 +9,7 @@ const ReferralPopup = ({ setReferralPopup,  setLoader }) => {
     const handleCopy = () => {
         navigator.clipboard.writeText(referral).then(() => {
             setIsCopied(true);
+            alert('copied');
             setTimeout(() => setIsCopied(false), 2000); // Reset the copied state after 2 seconds
         });
     };
@@ -50,42 +51,26 @@ const ReferralPopup = ({ setReferralPopup,  setLoader }) => {
 
     return (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
-            <div className="bg-[#f9e79f] bg-opacity-80 p-10 rounded-lg shadow-lg w-1/2 relative z-50 backdrop-blur-md">
-                <h2 className="mb-6 text-2xl font-semibold text-gold">Your Referral Code</h2>
-                
-                <div className="mb-6">
-                    <label className="block text-lg font-medium text-gold">
-                        Referral Code
-                    </label>
-                    <input
-                        type="text"
-                        value={referral}
-                        readOnly
-                        className="w-full px-4 py-3 mt-1 bg-transparent border rounded border-gold text-gold"
-                    />
-                </div>
-
-                <div className="mb-6">
-                    <button
-                        onClick={handleCopy}
-                        className="px-6 py-3 font-semibold text-white rounded-lg bg-gold"
-                    >
-                        {isCopied ? "Copied!" : "Copy Referral Code"}
-                    </button>
-                </div>
-
-                <div className="flex justify-end space-x-4">
-                    <button
-                        type="button"
-                        className="px-6 py-3 text-white bg-gray-500 rounded-lg"
-           
-                        onClick={() => setReferralPopup(false)}
-                    >
-                        Close
-                    </button>
-                </div>
-            </div>
+        <div className={`sectionContainer relative`}>
+          <div className={`contentContainer bg-[#fff] relative`}>
+            {/* Cancel Button (X) */}
+            <button
+              className="absolute top-4 right-4 text-[#3B2621] font-bold text-2xl"
+              onClick={()=>setReferralPopup(false)}  // Ensure this function closes the modal
+            >
+              &times;
+            </button>
+      
+            <p   className={`text mt-0 text-lg font-bold text-[#3B2621]`}>
+              Share Your Referral Code.
+            </p>
+            <div className="text-center text-bolder text-xl" onClick={handleCopy} >{referral}</div>
+          </div>
+      
+        
         </div>
+      </div>
+      
     );
 };
 

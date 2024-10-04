@@ -7,7 +7,7 @@ const Earn = ( {setReferralPopup}) => {
   return (
     <section className={`section ${styles.earnSection} `}>
       <div
-        className={`mt-[-7rem] flex justify-center bg-[#fff] w-[200px] p-[1rem] rounded-full mx-auto `}
+        className={`mt-[-5rem] md:mt-[-7rem] flex justify-center bg-[#fff] w-[100px] md:w-[200px] p-[1rem] rounded-full mx-auto `}
       >
         <img src={logo.src} className={`w-[200px]`} />
       </div>
@@ -35,10 +35,14 @@ const Earn = ( {setReferralPopup}) => {
           <div>
             <img src={earnImage.src} className="w-[300px]" />
           </div>
-          <Button onClick ={()=> setReferralPopup(true)}colored text={`Start Referring`} />
+          <Button
+            colored
+            text={`Start Referring`}
+            onClick={()=>setReferralPopup(true)}
+          />
         </div>
       </div>
-    </section>
+      </section>
   );
 };
 

@@ -11,6 +11,7 @@ import {
   buyBack,
   chain,
   ChainTrading,
+  check,
   cloudflare,
   coincodex,
   coinTelegraph,
@@ -24,6 +25,8 @@ import {
   git,
   gmail,
   ibm,
+  loading,
+  loading2,
   metamask,
   microsoft,
   PresaleGain,
@@ -153,4 +156,63 @@ export const kai = [
   },
 ];
 
-
+export const roadmap = [
+  {
+    subTitle: "TOKEN LAUNCH",
+    title: "PHASE 1",
+    list: [
+      { svg: check, text: "Kutte AI Token pre-sale launch " },
+      { svg: loading, text: "  List Kutte on Uniswap " },
+      { svg: loading2, text: " Complete pre-sale" },
+    ],
+  },
+  {
+    subTitle: "KUCOIN AND GATE LISTING",
+    title: "PHASE 2",
+    list: [
+      {
+        svg: loading,
+        text: "Onboard influencers  ",
+      },
+      {
+        svg: loading2,
+        text: " Launch $1M marketing campaign  ",
+      },
+      { svg: loading, text: " List Kutte AI on Gate and Kucoin " },
+      { svg: loading, text: " Deploy Kutte AI " },
+    ],
+  },
+  {
+    subTitle: "MARKETING EXPANSION",
+    title: "PHASE 3",
+    list: [
+      {
+        svg: loading2,
+        text: "Launch $5M marketing ",
+      },
+      { svg: loading2, text: " campaign " },
+      { svg: loading2, text: "Integrte Stocks into Kuttie AI " },
+    ],
+  },
+  {
+    subTitle: "BINANCE AND COINBASE LISTINGS",
+    title: "PHASE 4",
+    list: [
+      {
+        svg: loading2,
+        text: "Integrate Kutte into top crypto bots ",
+      },
+      {
+        svg: loading,
+        text: " List Kutte on Binance and Coinbase ",
+      },
+      {
+        svg: loading,
+        text: " Add additional token utilities  ",
+      },
+      {
+        text: " 1 KUTTE AI = 0.0002 USD  ",
+      },
+    ],
+  },
+];

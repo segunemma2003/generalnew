@@ -3,6 +3,7 @@ import toast  from "react-hot-toast";
 import styles from "../styles/Hero.module.css";
 import { detailsImg, logo } from "../assets/index.js";
 import Button from "./Button.jsx";
+import {formatNumberWithCommas } from '../utils/index'
 
 
 
@@ -81,31 +82,25 @@ const ADD_TOKEN_METAMASK = async() => {
           <div
             className={`${styles.buttonContainer} flex gap-3 justify-center`}
           >
-           {account?(<Button onClick= {()=>setBuyModel(true)} colored text={`Join presale`} />):(<Button onClick={()=> connectWallet(true)} colored text={`Connect Wallet`} />)} 
-            
-            <Button onClick={()=>openFileInNewTab()} text={`Whitepaper`} />
+             {account?(<Button onClick= {()=>setBuyModel(true)} colored text={`Join presale`} />):(<Button onClick={()=> connectWallet(true)} colored text={`Connect Wallet`} />)} 
+             <Button onClick={()=>openFileInNewTab()} text={`Whitepaper`} />
           </div>
 
           <div className="bg-[#ffa800] pt-[1rem] mt-[3rem] relative max-w-[500px] mx-auto">
-            <div className="flex justify-center bg-[#fff] w-[50px] mx-auto p-[0.5rem] rounded-full absolute right-0 left-0 top-[-30%]  ">
+            <div className="flex justify-center w-[80px] mx-auto p-[0.5rem] rounded-full absolute right-0 left-0 top-0 transform -translate-y-1/2">
               <img src={detailsImg.src} className="" />
             </div>
+
             <div className={`${styles.detailsCard}`}>
-              <div>
               <p className={`${styles.detailsTitle}`}>Staked</p>
-              <p className={`${styles.detailsText}`}>{settings? settings['total_staked']: detail?.tokenTotal} KUT</p>
-              </div>
               <div>
-                <p className={`${styles.detailsTitle}`}>Total Stake</p>
-                <p className={`${styles.detailsText}`}>
-                  {/* {detail?.soldTokens}  */}
-                  {settings? Number(settings['total_stake']): detail?.total_stake} 
-                  KUT</p>
+                <p className={`${styles.detailsText}`}>Total bought coin</p>
+                <p className={`${styles.detailsTitle}`}>    {settings? formatNumberWithCommas(Number(settings['total_stake'])): formatNumberWithCommas(detail?.total_stake)}  KUT</p>
               </div>
 
               <div>
-                <p className={`${styles.detailsTitle}`}>Apy</p>
-                <p className={`${styles.detailsText}`}>{ percentage}%</p>
+                <p className={`${styles.detailsText}`}>Apy</p>
+                <p className={`${styles.detailsTitle}`}>{ settings? settings['current_percent']: percentage}%</p>
               </div>
             </div>
           </div>

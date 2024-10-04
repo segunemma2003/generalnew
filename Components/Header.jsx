@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import styles from "../styles/Navbar.module.css";
 import { logo } from "../assets";
+import { CHECK_WALLET_CONNECTED } from "../context/constants";
 
 const Header = ({account, 
   CONNECT_WALLET,
@@ -9,10 +10,21 @@ const Header = ({account,
   setLoader,
   setOwnerModel,
   shortenAddress,
-  detail,
+  details,
   currency,
   ownerModel }) => {
     const [isMetaMaskInstalled, setIsMetaMaskInstalled]= useState(false);
+    // const [headerDetail, setDe]
+    const [detail, setDetail] = useState({})
+    // const 
+    useEffect(() => {
+      console.log(details)
+      setDetail(details)
+    }, [details])
+
+    useEffect(() => {
+      console.log(account)
+    }, [account])
 
 
     const [toggle, setToggle] = useState(false);
@@ -65,7 +77,7 @@ const Header = ({account,
           <h2 className={`${styles.logoTitle}`}>Kutte Ai</h2>
         </div>
         {
-          account?(
+          detail?.address ?(
             <a
             className={`${styles.navBtn}`}
             // onClick={() =>navigator.clipboard.writeText(detail?.address)}

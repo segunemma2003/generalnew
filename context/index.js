@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ethers} from 'ethers';
 import toast from 'react-hot-toast';
 
@@ -21,13 +21,15 @@ export const TOKEN_ICO_Provider = ({ children }) => {
     const notifySuccess = (msg) => toast.success(msg, {duration:2000});
     const notifyError = (msg) => toast.error(msg, {duration:2000});
 
+    
 
     const TOKEN_ICO = async()=>{
         try{
             const  address = await  CHECK_WALLET_CONNECTED();
+            console.log(`Connected addresss ${address}`)
             if(address) {
                 setLoader(true);
-                setAccount(account);
+                setAccount(address);
                 const contract = await TOKEN_ICO_CONTRACT();
 
                 const tokenDetails = await contract.getTokenDetails();

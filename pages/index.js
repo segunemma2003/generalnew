@@ -38,6 +38,8 @@ import {TOKEN_ICO_Context} from "../context/index";
 import {shortenAddress} from "../utils/index";
 import { getFirstSetting, getRecentBuys } from '../utils/api';
 import ReferralPopup from "../components/ReferralPopup";
+import HowToBuy from "../components/HowToBuy";
+import Staking from "../components/Staking";
 
 const index = () => {
   const {
@@ -66,6 +68,7 @@ const index = () => {
   const [ownerModel, setOwnerModel] = useState(false);
   const [buyModel, setBuyModel] = useState(false);
   const [howToBuy, setHowToBuy] = useState(false);
+  const [staking, setStaking] = useState(false);
   const [startReferring, setStartReferring] = useState(false);
   const [transferModel, setTransferModel] = useState(false);
   const [transferCurrency, setTransferCurrency] = useState(false);
@@ -83,7 +86,7 @@ const index = () => {
       const fetchData = async () => {
         try {
           const items = await TOKEN_ICO();
-          // console.log(items);
+          console.log(items);
           setDetail(items); // Set fetched data to `detail`
         } catch (error) {
           console.log(error);
@@ -93,7 +96,7 @@ const index = () => {
   
       fetchData();
     }
-  }, [detail]); // Only run if `detail` changes and is still `undefine
+  }, []); // Only run if `detail` changes and is still `undefine
 
   
   useEffect(() => {
@@ -222,6 +225,19 @@ const index = () => {
               setLoader={setLoader}
             />
           )}
+          {
+            howToBuy &&(
+            <HowToBuy
+            setHowToBuy={setHowToBuy}
+            />)
+          }
+
+{
+            staking &&(
+            <Staking
+            setStaking={setStaking}
+            />)
+          }
           {loader && <Loader />}
 
           <Header 
@@ -231,7 +247,7 @@ const index = () => {
           setLoader={setLoader}
           setOwnerModel={setOwnerModel}
           shortenAddress={shortenAddress}
-          detail={detail}
+          details={detail}
           DISCONNECT_WALLET={DISCONNECT_WALLET}
           currency={currency}
           ownerModel={ownerModel} 
@@ -246,7 +262,11 @@ const index = () => {
             detail={detail}
             addTokenToMetamask={addTokenToMetamask}
           />
-        <About />
+        <About
+        
+        setHowToBuy={setHowToBuy}
+        setStaking={setStaking}
+        />
 
         <Earn 
         setReferralPopup={setReferralPopup}

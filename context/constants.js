@@ -278,7 +278,8 @@ export const DISCONNECT_WALLET = async () => {
         params: [{ eth_accounts: {} }],
       });
     }
-    
+    window.localStorage.clear()
+
     // You can also reset the app state after disconnection, if needed
     console.log("Wallet disconnected");
 

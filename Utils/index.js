@@ -36,3 +36,12 @@ export function timeAgo(timestamp) {
       return `${years} years ago`;
     }
   }
+
+
+  export function formatNumberWithCommas(number) {
+    if (typeof number !== 'number' || isNaN(number)) {
+      return '';  // Return an empty string or a suitable fallback if input is not a valid number
+    }
+    
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }

@@ -48,6 +48,9 @@ import Profits from "./Profits.png";
 import decentralized from "./decentralized.png";
 import buyBack from "./buyBack.png";
 import PresaleGain from "./PresaleGain.png";
+import loading2 from "./loading.png";
+import loading from "./loading.png";
+import check from "./check.png";
 
 export {
   logo,
@@ -100,4 +103,7 @@ export {
   autoTrading,
   ChainTrading,
   decentralized,
+  loading,
+  loading2,
+  check,
 };
