@@ -31,7 +31,7 @@ const Roadmap = () => {
                     className={`flex gap-3 items-center mt-[0.6rem]`}
                   >
                    {listItem.svg && (
-      <img src={listItem.svg.url} alt="Icon" className="w-[20px]" />
+      <img src={listItem.svg} alt="Icon" className="w-[20px]" />
     )}
                     <p>{listItem.text}</p>
                   </div>

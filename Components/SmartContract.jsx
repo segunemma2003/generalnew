@@ -3,6 +3,7 @@ import styles from "../styles/SmartContract.module.css";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Button from "./Button";
 import { smartContractBigImage, smartContractSmallImage } from "../assets";
+import { formatNumberWithCommas } from "../utils";
 
 const contractAdd = `0xD010705f0974E52EBfac6BB28f1D1CfdC7909534`;
 const SmartContract = ({
@@ -35,7 +36,7 @@ const SmartContract = ({
                 <p className={`${styles.detailsTitle}`}>Staked</p>
                 <div>
                   <p className={`${styles.detailsText}`}>Total Stake</p>
-                  <p className={`${styles.detailsTitle}`}>{detail?.supply} KAI</p>
+                  <p className={`${styles.detailsTitle}`}>{ settings? formatNumberWithCommas(settings['total_staked']) :formatNumberWithCommas(detail?.supply)} KUT</p>
                 </div>
 
                 <div>

@@ -161,9 +161,9 @@ export const roadmap = [
     subTitle: "TOKEN LAUNCH",
     title: "PHASE 1",
     list: [
-      { svg: check, text: "Kutte AI Token pre-sale launch " },
-      { svg: loading, text: "  List Kutte on Uniswap " },
-      { svg: loading2, text: " Complete pre-sale" },
+      { svg: check.src, text: "Kutte AI Token pre-sale launch " },
+      { svg: loading.src, text: "  List Kutte on Uniswap " },
+      { svg: loading2.src, text: " Complete pre-sale" },
     ],
   },
   {
@@ -171,15 +171,15 @@ export const roadmap = [
     title: "PHASE 2",
     list: [
       {
-        svg: loading,
+        svg: loading.src,
         text: "Onboard influencers  ",
       },
       {
-        svg: loading2,
+        svg: loading2.src,
         text: " Launch $1M marketing campaign  ",
       },
-      { svg: loading, text: " List Kutte AI on Gate and Kucoin " },
-      { svg: loading, text: " Deploy Kutte AI " },
+      { svg: loading.src, text: " List Kutte AI on Gate and Kucoin " },
+      { svg: loading.src, text: " Deploy Kutte AI " },
     ],
   },
   {
@@ -187,11 +187,11 @@ export const roadmap = [
     title: "PHASE 3",
     list: [
       {
-        svg: loading2,
+        svg: loading2.src,
         text: "Launch $5M marketing ",
       },
-      { svg: loading2, text: " campaign " },
-      { svg: loading2, text: "Integrte Stocks into Kuttie AI " },
+      { svg: loading2.src, text: " campaign " },
+      { svg: loading2.src, text: "Integrte Stocks into Kuttie AI " },
     ],
   },
   {
@@ -199,15 +199,15 @@ export const roadmap = [
     title: "PHASE 4",
     list: [
       {
-        svg: loading2,
+        svg: loading2.src,
         text: "Integrate Kutte into top crypto bots ",
       },
       {
-        svg: loading,
+        svg: loading.src,
         text: " List Kutte on Binance and Coinbase ",
       },
       {
-        svg: loading,
+        svg: loading.src,
         text: " Add additional token utilities  ",
       },
       {
