@@ -4,15 +4,29 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import Button from "./Button";
 import { smartContractBigImage, smartContractSmallImage } from "../assets";
 import { formatNumberWithCommas } from "../utils";
+import { addTokenToMetamask } from "../context/constants";
+import toast from 'react-hot-toast';
+
 
 const contractAdd = `0xD010705f0974E52EBfac6BB28f1D1CfdC7909534`;
 const SmartContract = ({
   detail,
   currency,
   settings,
+  setLoader,
   setBuyModel
 }) => {
   const [copied, setCopied] = useState(null);
+  const notifySuccess = (msg) => toast.success(msg, {duration:2000});
+  const notifyError = (msg) => toast.error(msg, {duration:2000});
+
+
+  const ADD_TOKEN_METAMASK = async() => {
+    setLoader(true);
+    const response = await addTokenToMetamask();
+    setLoader(false);
+    notifySuccess(response);
+  }
 
   const copyHandler = () => {
     setCopied(true);
@@ -59,7 +73,7 @@ const SmartContract = ({
             </div>
           </div>
 
-          <Button onClick= {()=>setBuyModel(true)} colored text={`Join Presale`} />
+          <Button onClick= {()=>ADD_TOKEN_METAMASK()} colored text={`Contract to Wallet`} />
         </div>
       </div>
     </section>

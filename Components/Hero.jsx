@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import toast  from "react-hot-toast";
 import styles from "../styles/Hero.module.css";
-import { detailsImg, logo } from "../assets/index.js";
+import { detailsImg, logo, smImg } from "../assets/index.js";
 import Button from "./Button.jsx";
 import {formatNumberWithCommas } from '../utils/index'
 
@@ -65,12 +65,19 @@ const ADD_TOKEN_METAMASK = async() => {
   notifySuccess(response);
 }
   return (
-    <section className={`${styles.section} section`}>
-      <div className={styles.hero}>
+    <section className={`${styles.section} relative section `}>
+      <div className={`${styles.hero} `}>
         <div className={`${styles.heroContainer} sectionContainer`}>
           <div className={`${styles.imageContainer}`}>
             <img src={logo.src} alt="heroImage" />
           </div>
+
+          <img src={smImg.src} alt="coin" className={styles.coin} />
+          <img src={smImg.src} alt="coin" className={styles.coin2} />
+          <img src={smImg.src} alt="coin" className={styles.coin3} />
+          <img src={smImg.src} alt="coin" className={styles.coin4} />
+          <img src={smImg.src} alt="coin" className={styles.coin5} />
+          <img src={smImg.src} alt="coin" className={styles.coin6} />
 
           <div>
             <h1 className={`${styles.heroTitle}`}>KUTTE AI</h1>
@@ -92,10 +99,10 @@ const ADD_TOKEN_METAMASK = async() => {
             </div>
 
             <div className={`${styles.detailsCard}`}>
-              <p className={`${styles.detailsTitle}`}>Staked</p>
+              <p className={`${styles.detailsTitle}`}>ICO</p>
               <div>
-                <p className={`${styles.detailsText}`}>Total bought coin</p>
-                <p className={`${styles.detailsTitle}`}>    {settings? formatNumberWithCommas(Number(settings['total_stake'])): formatNumberWithCommas(detail?.total_stake)}  KUT</p>
+                <p className={`${styles.detailsText}`}>Total  Coin</p>
+                <p className={`${styles.detailsTitle}`}>{settings? formatNumberWithCommas(Number(settings['total_stake'])): formatNumberWithCommas(detail?.total_stake)}  KUT</p>
               </div>
 
               <div>

@@ -331,7 +331,7 @@ export const addTokenToMetamask  = async () => {
     const tokenDecimals = await tokenDetails?.decimals;
     const tokenAddress = TOKEN_ADDRESS;
     const tokenSymbol = tokenDetails?.symbol;
-    const tokenImage = "public/assets/image/logo.png";
+    const tokenImage = "https://ibb.co/JCf9d69";
 
     try{
       const wasAdded = await  window.ethereum.request({
@@ -361,5 +361,5 @@ export const addTokenToMetamask  = async () => {
 }
 
 
-const tokenImage =
-      "https://www.daulathussain.com/wp-content/uploads/2024/05/theblockchaincoders.jpg";
+// const tokenImage =
+//       "https://www.daulathussain.com/wp-content/uploads/2024/05/theblockchaincoders.jpg";

@@ -51,6 +51,7 @@ import PresaleGain from "./PresaleGain.png";
 import loading2 from "./loading.png";
 import loading from "./loading.png";
 import check from "./check.png";
+import smImg from "./smImg.png";
 
 export {
   logo,
@@ -106,4 +107,5 @@ export {
   loading,
   loading2,
   check,
+  smImg,
 };

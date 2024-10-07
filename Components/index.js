@@ -17,6 +17,7 @@ import Roadmap from "./Roadmap";
 
 //MOdel
 import Popup from './Popup';
+import PopupTwo from './PopupTwo';
 import TransferToken from './TransferToken';
 import Owner from './Owner';
 import TransferCurrency from './TransferCurrency';
@@ -63,6 +64,7 @@ export {
     TokenInfo,
     Roadmap,
     Popup,
+    PopupTwo,
     TransferToken,
     Owner,
     TransferCurrency,

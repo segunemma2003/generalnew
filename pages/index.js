@@ -32,7 +32,8 @@ import {Footer,
   TransferCurrency,
   Donate,
   UpdatePrice,
-  UpdateAddress } from "../components/index";
+  UpdateAddress, 
+  PopupTwo} from "../components/index";
 
 import {TOKEN_ICO_Context} from "../context/index";
 import {shortenAddress} from "../utils/index";
@@ -156,8 +157,21 @@ const index = () => {
           />
         
         )}
-        {buyModel && 
+        {/* {buyModel && 
         (<Popup 
+          setBuyModel={setBuyModel} 
+          BUY_TOKEN={BUY_TOKEN}
+          currency={currency}
+          detail={detail}
+          account={account}
+          ERC20={ERC20}
+          TOKEN_ADDRESS={TOKEN_ADDRESS}
+          setLoader={setLoader}
+          />)} */}
+
+
+{buyModel && 
+        (<PopupTwo
           setBuyModel={setBuyModel} 
           BUY_TOKEN={BUY_TOKEN}
           currency={currency}
@@ -285,7 +299,7 @@ const index = () => {
       <Liquidity />
       <SpaceGuard />
       <Roadmap />
-      <SmartContract detail={detail} setBuyModel={setBuyModel} settings={settings} />
+      <SmartContract detail={detail} setBuyModel={setBuyModel} settings={settings} setLoader={setLoader} />
       <Sponsors />
       <Patners />
       <Updates />
