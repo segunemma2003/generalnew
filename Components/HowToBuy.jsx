@@ -4,7 +4,7 @@ import React from "react";
 const HowToBuy = ({setHowToBuy}) => {
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
-  <section className={`section relative`}>
+  <section className={`section relative max-w-[70%]`}>
     <div className={`sectionContainer`}>
       <div className={`contentContainer bg-[#fff] relative`}>
         {/* Cancel Button (X) */}
