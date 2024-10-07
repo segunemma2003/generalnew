@@ -128,6 +128,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
 
     const BUY_TOKEN = async (amount, paymentCurrent, referrerAddress) => {
         try {
+            console.log(paymentCurrent);
             setLoader(true);
             const address = await CHECK_WALLET_CONNECTED();
             if (address) {
@@ -145,17 +146,21 @@ export const TOKEN_ICO_Provider = ({ children }) => {
                     let ethAmountToPay = ethers.utils.parseUnits(pricePerToken.toString(), "ether");
     
                     // If the user is paying with another cryptocurrency (BTC, BNB, SOL)
-                    if (paymentCurrent && paymentCurrent !== "ETH") {
-                        const priceInEth = await fetchChainlinkPrice(paymentCurrent); // Fetch price in ETH
-                        const convertedAmount = (amount * priceInEth).toString();
-                        ethAmountToPay = ethers.utils.parseUnits(convertedAmount, "ether");
-                        
-                        // Call function to handle buying tokens with other cryptocurrencies
-                        await buyTokenWithOtherCrypto(amount, paymentCurrent, referrerAddress, ethAmountToPay);
-                    } else {
+                    // if (paymentCurrent && paymentCurrent !== "ETH") {
+                    //     const priceInEth = await fetchChainlinkPrice(paymentCurrent); // Fetch price in ETH
+                    //     console.log("price");
+                    //     console.log(priceInEth);
+
+                    //     const convertedAmount = (amount * priceInEth).toString();
+                    //     ethAmountToPay = ethers.utils.parseUnits(convertedAmount, "ether");
+                    //     console.log(ethAmountToPay);
+                    //     // return;
+                    //     // Call function to handle buying tokens with other cryptocurrencies
+                    //     await buyTokenWithOtherCrypto(amount, paymentCurrent, referrerAddress, ethAmountToPay);
+                    // } else {
                         // Call the function to buy tokens with ETH
                         await buyTokenWithETH(amount, referrerAddress, payAmount);
-                    }
+                    // }
                 } else {
                     notifyError("Insufficient tokens available.");
                 }

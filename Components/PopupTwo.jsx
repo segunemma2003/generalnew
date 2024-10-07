@@ -17,6 +17,16 @@ const PopupTwo = ({
   const [referralAddress, setReferralAddress] = useState(null)
   const [transferToken, setTransferToken] = useState();
 
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault(); // Prevents default form submission behavior
+  
+    // Call the BUY_TOKEN function and await its result
+    setLoader(true);
+    await BUY_TOKEN(amount, paymentCurrency, referralAddress);
+    setLoader(false);
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     // Show loading overlay
@@ -64,8 +74,12 @@ const PopupTwo = ({
         </button>
         <FormComponent 
         setPaymentCurrency ={ setPaymentCurrency}
-        referralAddress={setReferralAddress}
+        setReferralAddress={setReferralAddress}
         setAmount={setAmount}
+        tokenPrice ={detail?.tokenPrice}
+        amount={amount}
+        tokenBalance={transferToken?.balance ?? 0}
+        onSubmitHandler={onSubmitHandler}
         />
         
     </div>

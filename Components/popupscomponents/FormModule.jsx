@@ -7,9 +7,12 @@ import FormModal from "./FormModal";
 
 const FormComponent = ({ 
   setPaymentCurrency,
-  referralAddress,
+  setReferralAddress,
   setAmount,
-  onSubmitHandler
+  onSubmitHandler,
+  tokenPrice,
+  amount,
+  tokenBalance
  }) => {
   return (
     <>
@@ -19,6 +22,11 @@ const FormComponent = ({
           {/* crypto to send */}
           <FormField
             label="You Buy"
+            onChange={(e) =>{
+              console.log(e);
+              setAmount(e);
+            }}
+            
             labelId="crypto-you-send"
             selectName="buycoin"
           />
@@ -26,8 +34,8 @@ const FormComponent = ({
           {/* crypto conversion details */}
           <div className="flex items-center justify-start w-full py-2">
             <div className={styles["form-conversion-detail"]}>
-              <span className="text-black">Current Balance: 2 KUT</span>
-              <span className="text-black">1 BTC = 45762.89 USDT</span>
+              <span className="text-black">Current Balance: {tokenBalance}  KUT</span>
+              <span className="text-black">1 KUT = {tokenPrice} ETH</span>
             </div>
             <button className="mx-auto" aria-label="Switch crypto">
               <img
@@ -42,6 +50,12 @@ const FormComponent = ({
           {/* crypto to receive */}
           <FormField
             label="Total Cost"
+            amount={amount * tokenPrice}
+            onSelect={(e)=>{
+              console.log(e);
+              setPaymentCurrency(e)
+            }}
+            
             labelId="crypto-you-get"
             selectName="receive-crypto"
           />
@@ -51,6 +65,10 @@ const FormComponent = ({
 <FormField
             label="Referral"
             labelId="refferal"
+            onChange={(e)=>{
+              console.log(e);
+              setReferralAddress(e);
+            }}
 
           />
 
