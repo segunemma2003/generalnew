@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }) {
        <Component {...pageProps} />
        <Toaster />
     </TOKEN_ICO_Provider>
+   
     {/* <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script> */}
       <script src="assets/js/jquery-3.5.1.min.js"></script>
       <script src="assets/js/bootstrap.bundle.min.js"></script>
